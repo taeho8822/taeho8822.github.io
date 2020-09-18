@@ -1,35 +1,32 @@
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://taeho8822.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+title: Hacker-Blog
+description: "A Jekyll Blog Theme For Hackers"
+author:
+  name: "SomeHacker"
+  email: "someone@somewebsite.somedomain"
+  url: "https://ashishchaudhary.in/hacker-blog"
 
+baseurl: /
 
-# Build settings
-markdown: kramdown
-permalink: pretty
+source: .
+destination: ./_site
+permalink: /:title
+paginate: 3
+paginate_path: /page/:num/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+future: true
 plugins:
+  - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll/tagging
 
-paginate: 5
-paginate_path: "/page/:num"
-
-
-# Pages Path
-defaults:
-  - scope:
-      path: '_pages'
-    values:
-      permalink: /:basename:output_ext
-
-include:
-  - _pages
-
-
-# Tags
-tag_page_dir:         tag
-tag_page_layout:      tag_page
-tag_permalink_style:  pretty
-
-sass:
-  sass_dir: _sass
-  style: compressed
+# Custom variables
+owner : "SomeHacker"
+year : "2020"
